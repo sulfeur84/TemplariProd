@@ -34,8 +34,20 @@ public class CameraMultiplePlayers : MonoBehaviour
     private void LateUpdate()
     {
         if (targets.Count == 0) return;
+        Checker();
         Move();
         Zoom();
+    }
+
+    void Checker()
+    {
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (targets[i] == null)
+            {
+                targets.Remove(targets[i]);
+            }
+        }
     }
 
     void Move()
