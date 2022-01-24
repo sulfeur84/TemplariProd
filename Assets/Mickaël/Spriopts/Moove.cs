@@ -17,12 +17,12 @@ public class Moove : MonoBehaviour
     private Random random = new Random();
     public GameObject DetruitSah;
     public float DommageParCoup = 50f;
-    public float GlobalTimer;
     public bool DomageBoost;
     private float RecuperationDommage;
     private float RecuperationVitesse;
     public bool Speeded;
     public bool Slowed;
+    private float GlobalTimer; 
 
     void Start()
     {
@@ -37,48 +37,62 @@ public class Moove : MonoBehaviour
     {
         HandleMovementInput();
         HealthBar.value = HP;
-        if(HP==0) Destroy(this.gameObject);
+        if(HP<=0) Destroy(this.gameObject);
+        
+        
         // ETATS EMPOISONNER
         if (Empoisonnee)
         {
-            for (float Timer = 10; Timer < 10; Timer += Time.deltaTime)
+            GlobalTimer += Time.deltaTime;
+            HP -= 25/10 * Time.deltaTime;
+            if (GlobalTimer >= 10)
             {
-                HP -= (HP * 25 / 100) * Time.deltaTime;
+                    GlobalTimer = 0;
+                    Empoisonnee = false;
             }
-            Empoisonnee = false;
+            
         }
 
         //ETATS BOOST DE DOMMAGE
         if (DomageBoost)
         {
-            for (float Timer = 10; Timer < 10; Timer += Time.deltaTime)
-            {
-                DommageParCoup = RecuperationDommage + (RecuperationDommage * 25 / 100);
-            }
-            DomageBoost = false;
-            DommageParCoup = RecuperationDommage;
+            GlobalTimer += Time.deltaTime;
+            DommageParCoup = RecuperationDommage + (RecuperationDommage * 25 / 100);
+                if (GlobalTimer >= 10)
+                {
+                    GlobalTimer = 0;
+                    DomageBoost = false;
+                    DommageParCoup = RecuperationDommage;
+                }
+            
         }
         
         //ETATS SLOW
         if (Slowed)
         {
-            for (float Timer = 10; Timer < 10; Timer += Time.deltaTime)
-            {
-                movementSpeed = RecuperationVitesse - (RecuperationVitesse * 25 / 100);
-            }
-            Slowed = false;
-            movementSpeed = RecuperationVitesse;
+            GlobalTimer += Time.deltaTime;
+            movementSpeed = RecuperationVitesse - (RecuperationVitesse * 25 / 100);
+                if (GlobalTimer >= 10)
+                {
+                    GlobalTimer = 0;
+                    Slowed = false;
+                    movementSpeed = RecuperationVitesse;
+                }
+            
         }
         
         //ETATS NEED FOR SPEED
         if (Speeded)
         {
-            for (float Timer = 10; Timer < 10; Timer += Time.deltaTime)
-            {
-                movementSpeed = RecuperationVitesse + (RecuperationVitesse * 25 / 100);
-            }
-            Speeded = false;
-            movementSpeed = RecuperationVitesse;
+            GlobalTimer += Time.deltaTime;
+            movementSpeed = RecuperationVitesse + (RecuperationVitesse * 25 / 100);
+                if (GlobalTimer >= 10)
+                {
+                    GlobalTimer = 0;
+                    Speeded = false;
+                    movementSpeed = RecuperationVitesse;
+                }
+            
         }
     }
 
@@ -95,7 +109,7 @@ public class Moove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ennemy"))
         {            
-            HP = HP - (HP*25/100);
+            HP -= 25;
         }
 
         if (other.gameObject.CompareTag("Burger"))
