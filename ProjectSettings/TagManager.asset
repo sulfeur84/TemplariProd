@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sol
+    uniqueID: 1473471965
+    locked: 0
+  - name: Couche 1
+    uniqueID: 3726898301
+    locked: 0
+  - name: Couche 2
+    uniqueID: 3138902331
+    locked: 0
+  - name: Couche 3
+    uniqueID: 1007027369
+    locked: 0
