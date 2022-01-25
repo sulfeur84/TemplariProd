@@ -11,7 +11,7 @@ public class CharacterMoving : MonoBehaviour
 {
     public float Speed;
     private float movingHorizontal, movingVertical;
-    private Vector3 rotationHorizontal, rotationVertical;
+    private float rotationHorizontal, rotationVertical;
     private void Start()
     {
         
@@ -19,18 +19,21 @@ public class CharacterMoving : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0,movingHorizontal ,0 * Time.deltaTime);
+        transform.Rotate(Vector3.right * rotationHorizontal * Time.deltaTime);
         transform.Translate(Vector3.right * movingHorizontal * Speed * Time.deltaTime);
         transform.Translate(Vector3.forward * movingVertical * Speed * Time.deltaTime);
+        Debug.Log(rotationHorizontal + rotationVertical);
     }
-
+    
     private void OnHorizontal(InputValue PlayerInput)
     {
         movingHorizontal = PlayerInput.Get<float>();
+        rotationHorizontal = PlayerInput.Get<float>();
     }
 
     private void OnVertical(InputValue PlayerInput)
     {
         movingVertical = PlayerInput.Get<float>();
+        rotationVertical = PlayerInput.Get<float>();
     }
 }
