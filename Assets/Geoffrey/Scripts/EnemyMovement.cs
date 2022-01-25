@@ -7,14 +7,14 @@ public class EnemyMovement : MonoBehaviour
     private GameObject[] _possibleTarget;
     public EnemyData enemyData;
     public static Transform Target;
-    public static Vector3 Position;
+    public static Vector3 position;
     private float _shortestTarget = 0f;
     private float _distance;
     private float _timer = 0f;
 
     void Start()
     {
-        Position = transform.position;
+        position = transform.position;
         _possibleTarget = GameObject.FindGameObjectsWithTag("Player");
         _shortestTarget = Mathf.Infinity;
     }
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        Target = FindClosestTarget(Target, _possibleTarget, _shortestTarget, Position);
+        Target = FindClosestTarget(Target, _possibleTarget, _shortestTarget, position);
         _distance = Vector3.Distance(Target.transform.position, this.transform.position);
         if (_distance <= enemyData.range)
         {
@@ -55,20 +55,20 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyData.enemyType == "Cac")
         {
-            Position = Vector3.MoveTowards(Position, Target.transform.position, enemyData.speed * Time.deltaTime);
-            transform.position = Position;
+            position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
+            transform.position = position;
         }
         else if (enemyData.enemyType == "FlyingCac")
         {
-            Position = Vector3.MoveTowards(Position, Target.transform.position, enemyData.speed * Time.deltaTime);
-            transform.position = Position;
+            position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
+            transform.position = position;
         }
         else if (enemyData.enemyType == "Shooter")
         {
-            if (_distance >= 2)
+            if (_distance >= 6)
             {
-                Position = Vector3.MoveTowards(Position, Target.transform.position, enemyData.speed * Time.deltaTime);
-                transform.position = Position;
+                position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
+                transform.position = position;
             }
             if (_distance <= enemyData.attackDistance)
             {

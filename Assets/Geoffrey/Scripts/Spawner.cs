@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
     {
         if (_timer >= _spawnTime && enemyCount != 0)
         {
-            Instantiate(_enemy, transform.position, Quaternion.identity);
+            GameObject enemy = Instantiate(_enemy, transform.position, Quaternion.identity) as GameObject;
             enemyCount--;
             _timer = 0;
         }

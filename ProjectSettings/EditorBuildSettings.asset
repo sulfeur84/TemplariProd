@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Valentin/Scenes/MainMenu.unity
     guid: 77d687e8d0a0f3e4ebaf5f29755bc57e
   - enabled: 1
-    path: Assets/Geoffrey/SampleScene.unity
+    path: Assets/Valentin/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: "Assets/Micka\xEBl/Scenes/OLALAleFAUXmenu.unity"
