@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: EnemyCac
   m_EditorClassIdentifier: 
   enemyModel: {fileID: 341523471200178467, guid: 246b54d4926416646876ec435ca6e6c1, type: 3}
+  projectile: {fileID: 0}
   enemyType: Cac
   enemyName: EnemyType01
-  speed: 3
+  speed: 2
+  reloadTime: 0
   range: 10
   health: 100
   damage: 15

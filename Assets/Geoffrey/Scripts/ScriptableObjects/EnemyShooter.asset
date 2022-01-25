@@ -16,9 +16,9 @@ MonoBehaviour:
   projectile: {fileID: 2217294198743582577, guid: c2c6ccb63e4966942b45f0f797623956, type: 3}
   enemyType: Shooter
   enemyName: EnemyType02
-  speed: 3
+  speed: 2
   reloadTime: 1.5
-  range: 30
+  range: 15
   health: 50
   damage: 0
-  attackDistance: 15
+  attackDistance: 8

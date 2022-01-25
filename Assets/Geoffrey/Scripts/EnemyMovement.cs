@@ -65,7 +65,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (enemyData.enemyType == "Shooter")
         {
-            if (_distance >= 6)
+            if (_distance >= 2)
             {
                 position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
                 transform.position = position;
