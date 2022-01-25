@@ -47,6 +47,10 @@ public class CameraMultiplePlayers : MonoBehaviour
             {
                 targets.Remove(targets[i]);
             }
+            if (targets[i].gameObject.activeSelf == false)
+            {
+                targets.Remove(targets[i]);
+            }
         }
     }
 
