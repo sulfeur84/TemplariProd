@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Valentin/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: "Assets/Micka\xEBl/Scenes/OLALAleFAUXmenu.unity"
+    guid: 7400b2a5394436f49a11f4e27db7d97a
+  - enabled: 1
+    path: "Assets/Micka\xEBl/Scenes/MickaSceneTest.unity"
+    guid: 7e47ae3a5fa7f894fa4f8b7b72ac9bf9
   m_configObjects: {}

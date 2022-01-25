@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="06a6e1e5-f91c-4997-bf40-c5aa65259aa7" name="Changes" comment="" />
+    <list default="true" id="8205b9e8-9484-42fd-8bff-7f8cac9f90ad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="248meeZBlPW6dtyRdq0YWIeEwL5" />
+  <component name="ProjectId" id="248ecauSiNdWMqopOnNiy8sgTmZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,10 +20,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -54,13 +47,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="06a6e1e5-f91c-4997-bf40-c5aa65259aa7" name="Changes" comment="" />
-      <created>1643020688284</created>
+      <changelist id="8205b9e8-9484-42fd-8bff-7f8cac9f90ad" name="Changes" comment="" />
+      <created>1643016722309</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1643020688284</updated>
-      <workItem from="1643020697026" duration="665000" />
-      <workItem from="1643027950880" duration="2103000" />
+      <updated>1643016722309</updated>
+      <workItem from="1643016735394" duration="10586000" />
+      <workItem from="1643098439384" duration="3596000" />
     </task>
     <servers />
   </component>
