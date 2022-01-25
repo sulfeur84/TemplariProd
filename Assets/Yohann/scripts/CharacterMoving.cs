@@ -1,27 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Composites;
+using UnityEngine.InputSystem.Controls;
 
 public class CharacterMoving : MonoBehaviour
 {
     public float Speed;
     private float movingHorizontal, movingVertical;
-    private Transform target;
+    private Vector3 rotationHorizontal, rotationVertical;
     private void Start()
     {
-        target = transform.Find("Target");
-        target.position = transform.Find("Vision").position;
+        
     }
 
     void Update()
     {
-        transform.Translate(Vector3.left * movingHorizontal * Speed * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(target.position - transform.position, Vector3.left);
-        transform.Translate(Vector3.back * movingVertical * Speed * Time.deltaTime);
+        transform.Rotate(0,movingHorizontal ,0 * Time.deltaTime);
+        transform.Translate(Vector3.right * movingHorizontal * Speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * movingVertical * Speed * Time.deltaTime);
     }
-    
+
     private void OnHorizontal(InputValue PlayerInput)
     {
         movingHorizontal = PlayerInput.Get<float>();
