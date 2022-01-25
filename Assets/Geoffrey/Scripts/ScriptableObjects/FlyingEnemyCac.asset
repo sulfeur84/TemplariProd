@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: FlyingEnemyCac
   m_EditorClassIdentifier: 
   enemyModel: {fileID: 7752046873660968981, guid: 645e7e2ca20b98042a2d09e0d191fe18, type: 3}
+  projectile: {fileID: 0}
   enemyType: FlyingCac
   enemyName: EnemyType03
-  speed: 5
+  speed: 2
+  reloadTime: 0
   range: 10
   health: 80
   damage: 15
