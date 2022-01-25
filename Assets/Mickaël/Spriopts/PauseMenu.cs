@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -24,17 +25,27 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                PausePanel.SetActive(false);
-                Time.timeScale = 1f;
-                IsPaused = false;
+                Resume();
             }
         }
     }
 
-    void GetPaused()
+    public void GetPaused()
     {
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
+    }
+
+    public void Resume()
+    {
+        PausePanel.SetActive(false);
+        Time.timeScale = 1f;
+        IsPaused = false;
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("OLALAleFAUXmenu");
     }
 }

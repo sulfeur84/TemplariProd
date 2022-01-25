@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
-public class Moove : MonoBehaviour
+public class MickaPlayerSettings : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 10f;
 
@@ -22,7 +23,8 @@ public class Moove : MonoBehaviour
     private float RecuperationVitesse;
     public bool Speeded;
     public bool Slowed;
-    private float GlobalTimer; 
+    private float GlobalTimer;
+    public Vector3 respawnPos;
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class Moove : MonoBehaviour
         HealthBar.minValue = 0;
         RecuperationDommage = DommageParCoup;
         RecuperationVitesse = movementSpeed;
+        respawnPos = GetComponent<Transform>().position;
     }
 
 
@@ -37,7 +40,11 @@ public class Moove : MonoBehaviour
     {
         HandleMovementInput();
         HealthBar.value = HP;
-        if(HP<=0) Destroy(this.gameObject);
+        if (HP <= 0)
+        {
+            transform.position = respawnPos;
+            HP = HealthBar.maxValue;
+        }
         
         
         // ETATS EMPOISONNER
@@ -138,6 +145,11 @@ public class Moove : MonoBehaviour
             if (Binary == 1) Speeded = true;
             else Slowed = true;
 
+        }
+
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            respawnPos = other.transform.position;
         }
     }
     
