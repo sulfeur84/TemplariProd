@@ -35,17 +35,16 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Escape.IsPressed()) 
+        if (Escape.IsPressed() && !IsPaused)
         {
-            if (!IsPaused)
-            {
-                GetPaused();
-            }
-            else
-            {
-                Resume();
-            }
+            GetPaused();
         }
+
+        else if (!Escape.IsPressed() && IsPaused)
+        {
+            Resume();
+        }
+        
     }
 
     public void GetPaused()
