@@ -10,8 +10,9 @@ using UnityEngine.InputSystem.Controls;
 public class CharacterMoving : MonoBehaviour
 {
     public float Speed;
-    private float movingHorizontal, movingVertical;
-    private Vector3 rotationHorizontal, rotationVertical;
+    private float movingVertical;
+    private float rotationHorizontal;
+    public float rotationSpeed;
     private void Start()
     {
         
@@ -19,14 +20,13 @@ public class CharacterMoving : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0,movingHorizontal ,0 * Time.deltaTime);
-        transform.Translate(Vector3.right * movingHorizontal * Speed * Time.deltaTime);
+        transform.Rotate(Vector3.up * rotationHorizontal * rotationSpeed * Time.deltaTime);
         transform.Translate(Vector3.forward * movingVertical * Speed * Time.deltaTime);
     }
-
+    
     private void OnHorizontal(InputValue PlayerInput)
     {
-        movingHorizontal = PlayerInput.Get<float>();
+        rotationHorizontal = PlayerInput.Get<float>();
     }
 
     private void OnVertical(InputValue PlayerInput)
