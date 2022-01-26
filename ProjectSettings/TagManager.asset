@@ -58,3 +58,6 @@ TagManager:
   - name: Couche 3
     uniqueID: 1007027369
     locked: 0
+  - name: "D\xE9cor"
+    uniqueID: 3601270721
+    locked: 0
