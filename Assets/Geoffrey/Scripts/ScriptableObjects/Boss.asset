@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0972346231f884f8a0bbd35041e8e4, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  enemyModel: {fileID: 8177798194074070809, guid: d8e10754952867f4d91da909112edbcf, type: 3}
+  projectile: {fileID: 5581572084574437495, guid: 481225e481bd80f419d2f1411cfe941b, type: 3}
+  enemyType: Boss
+  enemyName: EnemyType04
+  speed: 1
+  reloadTime: 2
+  range: 6
+  health: 200
+  damage: 25
+  attackDistance: 4

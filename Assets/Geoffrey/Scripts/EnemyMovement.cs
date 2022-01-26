@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         _timer += Time.deltaTime;
         Target = FindClosestTarget(Target, _possibleTarget, _shortestTarget, position);
         _distance = Vector3.Distance(Target.transform.position, this.transform.position);
-        if (_distance <= enemyData.range)
+        if (_distance <= enemyData.range && Target != null)
         {
             Attack();
         }
@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
         return finalTarget;
     }
 
-    public void Attack()
+    private void Attack()
     {
         if (enemyData.enemyType == "Cac")
         {
@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
             position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
             transform.position = position;
         }
-        else if (enemyData.enemyType == "Shooter")
+        else if (enemyData.enemyType == "Shooter" || enemyData.enemyType == "Boss")
         {
             if (_distance >= 2)
             {
@@ -78,6 +78,11 @@ public class EnemyMovement : MonoBehaviour
                     projectile.GetComponent<Rigidbody>().velocity = Vector3.forward * Bullet.speed;
                     _timer = 0f;
                 }
+            }
+            if (enemyData.enemyType == "Boss" && enemyData.health <= 100)
+            {
+                position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
+                transform.position = position;
             }
         }
     }
