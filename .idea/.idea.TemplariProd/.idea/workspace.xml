@@ -21,6 +21,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/specialAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/Attack.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="248kc2meCOXznLxnDcvtPWidafK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
