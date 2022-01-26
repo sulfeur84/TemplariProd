@@ -894,10 +894,10 @@ RectTransform:
   m_Father: {fileID: 6445138}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22931556, y: 0.7916099}
-  m_AnchorMax: {x: 0.56988597, y: 0.9607803}
-  m_AnchoredPosition: {x: 0.23199463, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.22931556, y: 0.76356053}
+  m_AnchorMax: {x: 0.9571141, y: 1}
+  m_AnchoredPosition: {x: 0.58306885, y: -0.28459167}
+  m_SizeDelta: {x: -0.3, y: 0.55200005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188879149
 MonoBehaviour:
@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.2264151, g: 0.21926165, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -920,19 +920,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2ede9efc9adf8cf4f8d5831a609a1957, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 4
+  m_Text: "Sebb le Travailleur\r"
 --- !u!222 &188879150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58440,13 +58440,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272957412}
-  m_LocalRotation: {x: 0.36215454, y: 0.29123268, z: 0.022964543, w: 0.8851555}
+  m_LocalRotation: {x: 0.3251261, y: 0.33697608, z: 0.05363578, w: 0.8819657}
   m_LocalPosition: {x: -5.6, y: 7.01, z: 1.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1113983630}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 38.884, y: 43.134, z: 18.858}
+  m_LocalEulerAnglesHint: {x: 32.504, y: 48.259, z: 21.839}
 --- !u!212 &1272957414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58728,10 +58728,10 @@ RectTransform:
   m_Father: {fileID: 2116344463}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22931556, y: 0.7916099}
-  m_AnchorMax: {x: 0.56988597, y: 0.9607803}
-  m_AnchoredPosition: {x: 0.23199463, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.22931556, y: 0.7636592}
+  m_AnchorMax: {x: 0.9571141, y: 1}
+  m_AnchoredPosition: {x: 0.5830002, y: -0.2845993}
+  m_SizeDelta: {x: -0.3, y: 0.55099964}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372499159
 MonoBehaviour:
@@ -58746,7 +58746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.2924528, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58754,19 +58754,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0fe1db1cef713dd4b8b7fb217bd6a85c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 1
+  m_Text: "Selyne la Bourrine\r"
 --- !u!222 &1372499160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58807,10 +58807,10 @@ RectTransform:
   m_Father: {fileID: 630573649}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22931556, y: 0.7916099}
-  m_AnchorMax: {x: 0.56988597, y: 0.9607803}
-  m_AnchoredPosition: {x: 0.23199463, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.22931556, y: 0.7524395}
+  m_AnchorMax: {x: 0.9571141, y: 1}
+  m_AnchoredPosition: {x: 0.5820923, y: 0.7154083}
+  m_SizeDelta: {x: -0.3, y: -1.448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382308820
 MonoBehaviour:
@@ -58825,7 +58825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.022021146, g: 0.18867922, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58833,19 +58833,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0fe1db1cef713dd4b8b7fb217bd6a85c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 2
+  m_Text: "Carl le Seducteur\r"
 --- !u!222 &1382308821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59672,10 +59672,10 @@ RectTransform:
   m_Father: {fileID: 1530744308}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22931556, y: 0.7916099}
-  m_AnchorMax: {x: 0.56988597, y: 0.9607803}
-  m_AnchoredPosition: {x: 0.23199463, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.22931556, y: 0.7635606}
+  m_AnchorMax: {x: 0.9571141, y: 1}
+  m_AnchoredPosition: {x: 0.5830002, y: -0.28899384}
+  m_SizeDelta: {x: -0.3, y: 0.5430002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608615707
 MonoBehaviour:
@@ -59690,7 +59690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.014660287, b: 0.254717, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -59698,19 +59698,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0fe1db1cef713dd4b8b7fb217bd6a85c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Player 3
+  m_Text: "Fraid la Citerne\r"
 --- !u!222 &1608615708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59819,13 +59819,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638259703}
-  m_LocalRotation: {x: 0.4416817, y: 0.23225152, z: 0.10128555, w: 0.86064965}
+  m_LocalRotation: {x: 0.42660597, y: 0.258903, z: 0.15387887, w: 0.85281765}
   m_LocalPosition: {x: -5.76, y: 6.4700003, z: 2.02}
   m_LocalScale: {x: 0.68929, y: 0.68929005, z: 0.68929}
   m_Children: []
   m_Father: {fileID: 1113983630}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 45.497, y: 44.265, z: 32.781}
+  m_LocalEulerAnglesHint: {x: 40.388, y: 48.776, z: 39.39}
 --- !u!212 &1638259705
 SpriteRenderer:
   m_ObjectHideFlags: 0
