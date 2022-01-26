@@ -8,6 +8,7 @@ TagManager:
   - Burger
   - Binouze
   - Tongue
+  - Weapon
   layers:
   - Default
   - TransparentFX
