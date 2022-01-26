@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using JetBrains.Annotations;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
+using UnityEngine.InputSystem;
 
 public class MickaPlayerSettings : MonoBehaviour
 {
@@ -13,18 +15,31 @@ public class MickaPlayerSettings : MonoBehaviour
 
     [SerializeField] private float HP = 100f;
 
-    public bool Empoisonnee;
     public Slider HealthBar;
     private Random random = new Random();
     public GameObject DetruitSah;
     public float DommageParCoup = 50f;
-    public bool DomageBoost;
-    private float RecuperationDommage;
-    private float RecuperationVitesse;
-    public bool Speeded;
-    public bool Slowed;
-    private float GlobalTimer;
+    private float RecuperationDommage, RecuperationVitesse, GlobalTimer;
+    public bool Speeded, Slowed, DomageBoost, Empoisonnee;
     public Vector3 respawnPos;
+    private InputTest PlayerController;
+    private InputAction Move;
+
+    private void Awake()
+    {
+        PlayerController = new InputTest();
+    }
+
+    private void OnEnable()
+    {
+        Move = PlayerController.Player.Vector3;
+        Move.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Move.Disable();
+    }
 
     void Start()
     {
@@ -33,6 +48,7 @@ public class MickaPlayerSettings : MonoBehaviour
         RecuperationDommage = DommageParCoup;
         RecuperationVitesse = movementSpeed;
         respawnPos = GetComponent<Transform>().position;
+        
     }
 
 
@@ -105,10 +121,7 @@ public class MickaPlayerSettings : MonoBehaviour
 
     void HandleMovementInput()
     {
-        float _horizontal = Input.GetAxis("Horizontal");
-        float _vertical = Input.GetAxis("Vertical");
-
-        Vector3 _movement = new Vector3(_horizontal, 0, _vertical);
+        Vector3 _movement = Move.ReadValue<Vector3>();
         transform.Translate(_movement * movementSpeed * Time.deltaTime, Space.World);
     }
 

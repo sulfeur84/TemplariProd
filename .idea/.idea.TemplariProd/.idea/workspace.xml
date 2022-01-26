@@ -21,6 +21,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/WeaponScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/EnnemyAIE.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="248kc2meCOXznLxnDcvtPWidafK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -69,6 +73,7 @@
       <updated>1643019678316</updated>
       <workItem from="1643019696268" duration="13854000" />
       <workItem from="1643097867229" duration="12764000" />
+      <workItem from="1643185176722" duration="6980000" />
     </task>
     <servers />
   </component>

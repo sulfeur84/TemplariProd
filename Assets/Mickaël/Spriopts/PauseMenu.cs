@@ -1,23 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem; 
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PausePanel;
-
+    private InputTest PAUSE;
     public bool IsPaused;
-    // Start is called before the first frame update
+
+    private InputAction Escape;
     void Start()
     {
         PausePanel.SetActive(false);
     }
+    
+    private void Awake()
+    {
+        PAUSE = new InputTest();
+    }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        Escape = PAUSE.UI.Cancel;
+        Escape.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Escape.Disable();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Escape.IsPressed()) 
         {
             if (!IsPaused)
             {
