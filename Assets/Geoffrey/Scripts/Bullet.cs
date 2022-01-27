@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, speed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, speed * Time.deltaTime);
     }
 
     public void OnTriggerEnter(Collider other)

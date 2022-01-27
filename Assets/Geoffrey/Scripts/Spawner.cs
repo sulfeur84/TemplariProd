@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
     private int enemyCount;
     [SerializeField]
     private float _spawnTime;
-    private GameObject[] _possibleTarget;
+    private List<Transform> _possibleTarget = new List<Transform>();
     private float _shortestTarget = 0f;
     private float _distance;
     private Transform _target;
@@ -23,7 +23,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         _position = transform.position;
-        _possibleTarget = GameObject.FindGameObjectsWithTag("Player");
         _shortestTarget = Mathf.Infinity;
     }
 
@@ -31,7 +30,7 @@ public class Spawner : MonoBehaviour
     {
         _timer += Time.deltaTime;
         _target = EnemyMovement.FindClosestTarget(_target, _possibleTarget, _shortestTarget, _position);
-        _distance = Vector3.Distance(_target.transform.position, this.transform.position);
+        _distance = Vector3.Distance(_target.position, this.transform.position);
         if (_distance <= range)
         {
             Spawn();
@@ -42,9 +41,17 @@ public class Spawner : MonoBehaviour
     {
         if (_timer >= _spawnTime && enemyCount != 0)
         {
-            GameObject enemy = Instantiate(_enemy, transform.position, Quaternion.identity) as GameObject;
+            Instantiate(_enemy, transform.position, Quaternion.identity);
             enemyCount--;
             _timer = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            _possibleTarget.Add(other.transform);
         }
     }
 }

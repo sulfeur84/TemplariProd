@@ -24,16 +24,4 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other == _enemy.GetComponent<Collider>())
-        {
-            health -= _enemy.GetComponent<EnemyData>().damage;
-        }
-        else if (other == _bullet.GetComponent<Collider>())
-        {
-            health -= _bullet.GetComponent<Bullet>().damage;
-        }
-    }
 }

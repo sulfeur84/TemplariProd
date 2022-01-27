@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private GameObject[] _possibleTarget;
+    private List<Transform> _possibleTarget = new List<Transform>();
     public EnemyData enemyData;
+    private SphereCollider detectionZone;
     public static Transform Target;
     public static Vector3 position;
     private float _shortestTarget = 0f;
     private float _distance;
     private float _timer = 0f;
+    private bool inRange = false;
 
     void Start()
     {
+        detectionZone = GetComponent<SphereCollider>();
+        detectionZone.radius = enemyData.range;
         position = transform.position;
-        _possibleTarget = GameObject.FindGameObjectsWithTag("Player");
         _shortestTarget = Mathf.Infinity;
     }
 
@@ -23,18 +26,19 @@ public class EnemyMovement : MonoBehaviour
     {
         _timer += Time.deltaTime;
         Target = FindClosestTarget(Target, _possibleTarget, _shortestTarget, position);
-        _distance = Vector3.Distance(Target.transform.position, this.transform.position);
-        if (_distance <= enemyData.range && Target != null)
+        _distance = Vector3.Distance(Target.position, transform.position);
+        if (inRange && Target != null)
         {
+            transform.LookAt(Target);
             Attack();
         }
     }
                                       
-    public static Transform FindClosestTarget(Transform finalTarget, GameObject[] possibleTargetList, float shortestTarget, Vector3 objectPosition)
+    public static Transform FindClosestTarget(Transform finalTarget, List<Transform> possibleTargetList, float shortestTarget, Vector3 objectPosition)
     {
-        GameObject nearestTarget = null;
+        Transform nearestTarget = null;
 
-        foreach (GameObject target in possibleTargetList)
+        foreach (Transform target in possibleTargetList)
         {
             float distanceToTarget = Vector3.Distance(objectPosition, target.transform.position);
             if (distanceToTarget < shortestTarget)
@@ -70,20 +74,28 @@ public class EnemyMovement : MonoBehaviour
                 position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
                 transform.position = position;
             }
-            if (_distance <= enemyData.attackDistance)
+            if (_distance <= enemyData.attackRange)
             {
                 if (_timer >= enemyData.reloadTime)
                 {
-                    GameObject projectile = Instantiate(enemyData.projectile, transform) as GameObject;
-                    projectile.GetComponent<Rigidbody>().velocity = Vector3.forward * Bullet.speed;
+                    Rigidbody rb = Instantiate(enemyData.projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    rb.AddForce(transform.forward * Bullet.speed, ForceMode.Impulse);
                     _timer = 0f;
                 }
             }
-            if (enemyData.enemyType == "Boss" && enemyData.health <= 100)
+            if (enemyData.enemyType == "Boss")
             {
                 position = Vector3.MoveTowards(position, Target.transform.position, enemyData.speed * Time.deltaTime);
                 transform.position = position;
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            _possibleTarget.Add(other.transform);
+            inRange = true;
         }
     }
 }
