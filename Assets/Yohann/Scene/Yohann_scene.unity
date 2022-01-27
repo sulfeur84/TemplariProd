@@ -188,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ba8b896250055b743861568bdb33d94d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -539,7 +539,6 @@ MonoBehaviour:
   AttackBox: {fileID: 5051182158371830575}
   Player: {fileID: 2040717860}
   AttackDuration: 1
-  InSimpleAttack: 0
 --- !u!114 &888581719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,7 +584,8 @@ MonoBehaviour:
   specialAttackBox: {fileID: 7006031}
   Player: {fileID: 2040717860}
   AttackDuration: 2
-  InAttack: 0
+  specialCooldown: 0
+  CooldownTime: 1
 --- !u!1 &1990068882
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ba8b896250055b743861568bdb33d94d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

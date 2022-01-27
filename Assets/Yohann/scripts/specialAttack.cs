@@ -9,12 +9,13 @@ public class specialAttack : MonoBehaviour
     public GameObject specialAttackBox;
     public GameObject Player;
     public float AttackDuration;
-    public bool InAttack;
+    public static bool InAttack;
+    public bool specialCooldown;
+    public float CooldownTime;
     // Start is called before the first frame update
     private void Start()
     {
         specialAttackBox.SetActive(false);
-        InAttack = false;
     }
 
     private void Update()
@@ -25,9 +26,10 @@ public class specialAttack : MonoBehaviour
 
     void OnSpecialAttack()
     {
-        if(InAttack == false)
+        if(InAttack == false && specialCooldown == false)
         {
             InAttack = true;
+            specialCooldown = true;
             specialAttackBox.SetActive(true);
             Invoke("DestroyBox", AttackDuration);
         }
@@ -37,6 +39,12 @@ public class specialAttack : MonoBehaviour
     {
         specialAttackBox.SetActive(false);
         InAttack = false;
+        Invoke("Cooldown",CooldownTime);
+    }
+
+    void Cooldown()
+    {
+        specialCooldown = false;
     }
 
     private void OnTriggerEnter(Collider other)
