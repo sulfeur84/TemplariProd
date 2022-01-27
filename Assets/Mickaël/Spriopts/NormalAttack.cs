@@ -13,6 +13,7 @@ public class NormalAttack : MonoBehaviour
     public Image CooldownImage;
     public bool OnCooldown;
     private float timer;
+    public Animator anim;
 
     public float Delay;
     // Start is called before the first frame update
@@ -40,11 +41,14 @@ public class NormalAttack : MonoBehaviour
     {
         if(specialAttack.InAttack == false && !OnCooldown)
         {
+            anim.SetTrigger("Attack");
+
             specialAttack.InAttack = true;
             AttackBox.SetActive(true);
             timer = 0;
             OnCooldown = true;
             Invoke("DestroyBox", AttackDuration);
+
         }
     }
 

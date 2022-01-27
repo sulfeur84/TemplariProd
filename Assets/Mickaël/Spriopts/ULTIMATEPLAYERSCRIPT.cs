@@ -18,6 +18,8 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     private float RecuperationDommage, RecuperationVitesse, GlobalTimer;
     public bool Speeded, Slowed, DomageBoost, Empoisonnee;
     public Vector3 respawnPos;
+
+    public Animator anim;
     
     private void Start()
     {
@@ -94,6 +96,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
             }
             
         }
+        
     }
 
     private void OnHorizontal(InputValue PlayerInput)
@@ -104,6 +107,9 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     private void OnVertical(InputValue PlayerInput)
     {
         movingVertical = PlayerInput.Get<float>();
+        anim.SetBool("Run", true);
+        if(PlayerInput.Get<float>() == 0) anim.SetBool("Run", false);
+        
     }
 
     private void OnCollisionEnter(Collision other)
