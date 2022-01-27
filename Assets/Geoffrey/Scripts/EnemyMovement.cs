@@ -81,4 +81,9 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
+
+    public void Dead()
+    {
+        Destroy(this.gameObject);
+    }
 }
