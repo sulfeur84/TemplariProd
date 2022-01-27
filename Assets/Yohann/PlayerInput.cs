@@ -44,6 +44,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SimpleAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""de4f8de9-8020-4f1f-a964-53461d418968"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""edefd138-2fff-4aac-8a26-32b581d8b096"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +130,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3dd2e267-1adf-4ad3-a5d4-90ab9fc9b075"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SimpleAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5a3dc13-e88f-43ba-a4e4-2be0a8c48352"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpecialAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +162,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_ControllerInput = asset.FindActionMap("ControllerInput", throwIfNotFound: true);
         m_ControllerInput_Horizontal = m_ControllerInput.FindAction("Horizontal", throwIfNotFound: true);
         m_ControllerInput_Vertical = m_ControllerInput.FindAction("Vertical", throwIfNotFound: true);
+        m_ControllerInput_SimpleAttack = m_ControllerInput.FindAction("SimpleAttack", throwIfNotFound: true);
+        m_ControllerInput_SpecialAttack = m_ControllerInput.FindAction("SpecialAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,12 +225,16 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IControllerInputActions m_ControllerInputActionsCallbackInterface;
     private readonly InputAction m_ControllerInput_Horizontal;
     private readonly InputAction m_ControllerInput_Vertical;
+    private readonly InputAction m_ControllerInput_SimpleAttack;
+    private readonly InputAction m_ControllerInput_SpecialAttack;
     public struct ControllerInputActions
     {
         private @PlayerInput m_Wrapper;
         public ControllerInputActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Horizontal => m_Wrapper.m_ControllerInput_Horizontal;
         public InputAction @Vertical => m_Wrapper.m_ControllerInput_Vertical;
+        public InputAction @SimpleAttack => m_Wrapper.m_ControllerInput_SimpleAttack;
+        public InputAction @SpecialAttack => m_Wrapper.m_ControllerInput_SpecialAttack;
         public InputActionMap Get() { return m_Wrapper.m_ControllerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -204,6 +250,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Vertical.started -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnVertical;
                 @Vertical.performed -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnVertical;
                 @Vertical.canceled -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnVertical;
+                @SimpleAttack.started -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSimpleAttack;
+                @SimpleAttack.performed -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSimpleAttack;
+                @SimpleAttack.canceled -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSimpleAttack;
+                @SpecialAttack.started -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
+                @SpecialAttack.performed -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
+                @SpecialAttack.canceled -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
             }
             m_Wrapper.m_ControllerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -214,6 +266,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Vertical.started += instance.OnVertical;
                 @Vertical.performed += instance.OnVertical;
                 @Vertical.canceled += instance.OnVertical;
+                @SimpleAttack.started += instance.OnSimpleAttack;
+                @SimpleAttack.performed += instance.OnSimpleAttack;
+                @SimpleAttack.canceled += instance.OnSimpleAttack;
+                @SpecialAttack.started += instance.OnSpecialAttack;
+                @SpecialAttack.performed += instance.OnSpecialAttack;
+                @SpecialAttack.canceled += instance.OnSpecialAttack;
             }
         }
     }
@@ -222,5 +280,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnHorizontal(InputAction.CallbackContext context);
         void OnVertical(InputAction.CallbackContext context);
+        void OnSimpleAttack(InputAction.CallbackContext context);
+        void OnSpecialAttack(InputAction.CallbackContext context);
     }
 }
