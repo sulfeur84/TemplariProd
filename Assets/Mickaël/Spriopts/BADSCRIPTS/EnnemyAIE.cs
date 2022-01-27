@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnnemyAIE : MonoBehaviour
 {
-    private int HP = 100;
+    public int HP = 100;
     
 
     void Update()

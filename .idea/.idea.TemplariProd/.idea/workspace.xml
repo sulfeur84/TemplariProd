@@ -22,8 +22,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/ScriptableObject/AttackData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Valentin/Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/Attack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/SpecialAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/NormalAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/ScriptableObject/AttackData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/specialAttack.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="248kc2meCOXznLxnDcvtPWidafK" />
@@ -75,7 +78,7 @@
       <workItem from="1643019696268" duration="13854000" />
       <workItem from="1643097867229" duration="21061000" />
       <workItem from="1643271704648" duration="4076000" />
-      <workItem from="1643290549095" duration="1837000" />
+      <workItem from="1643276650592" duration="4951000" />
     </task>
     <servers />
   </component>
