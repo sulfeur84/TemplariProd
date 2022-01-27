@@ -156,7 +156,30 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Player1"",
+            ""bindingGroup"": ""Player1"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player2"",
+            ""bindingGroup"": ""Player2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // ControllerInput
         m_ControllerInput = asset.FindActionMap("ControllerInput", throwIfNotFound: true);
@@ -276,6 +299,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public ControllerInputActions @ControllerInput => new ControllerInputActions(this);
+    private int m_Player1SchemeIndex = -1;
+    public InputControlScheme Player1Scheme
+    {
+        get
+        {
+            if (m_Player1SchemeIndex == -1) m_Player1SchemeIndex = asset.FindControlSchemeIndex("Player1");
+            return asset.controlSchemes[m_Player1SchemeIndex];
+        }
+    }
+    private int m_Player2SchemeIndex = -1;
+    public InputControlScheme Player2Scheme
+    {
+        get
+        {
+            if (m_Player2SchemeIndex == -1) m_Player2SchemeIndex = asset.FindControlSchemeIndex("Player2");
+            return asset.controlSchemes[m_Player2SchemeIndex];
+        }
+    }
     public interface IControllerInputActions
     {
         void OnHorizontal(InputAction.CallbackContext context);

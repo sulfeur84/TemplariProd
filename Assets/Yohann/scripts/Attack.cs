@@ -41,8 +41,8 @@ public class Attack : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.LogWarning("j'aimerai un void dead pour détruire l'énnemi pls");
             GameObject enemy = GameObject.FindWithTag("Enemy");
+            enemy.GetComponent<EnemyMovement>().Dead();
         }
     }
 }
