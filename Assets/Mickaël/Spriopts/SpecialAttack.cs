@@ -15,7 +15,7 @@ public class SpecialAttack : MonoBehaviour
     public Image CooldownImage;
     public bool OnCooldown;
     private float timer;
-
+    public Animator anim;
     public float Delay;
     // Start is called before the first frame update
     private void Start()
@@ -43,6 +43,7 @@ public class SpecialAttack : MonoBehaviour
     {
         if(InAttack == false && specialCooldown == false)
         {
+            anim.SetTrigger("Special");
             InAttack = true;
             specialCooldown = true;
             specialAttackBox.SetActive(true);

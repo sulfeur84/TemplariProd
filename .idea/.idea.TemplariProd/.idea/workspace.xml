@@ -23,11 +23,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Valentin/Sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/ScriptableObject/AttackData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/SpecialAttack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/NormalAttack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/ScriptableObject/AttackData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/specialAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Mickaël/Spriopts/NormalAttack.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="248kc2meCOXznLxnDcvtPWidafK" />
   <component name="ProjectViewState">
