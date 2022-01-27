@@ -12,7 +12,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     private float movingVertical;
     private float rotationHorizontal;
     public GameObject DetruitSah;
-    public Slider HealthBar;
+    public Image HealthBar;
     private Random random = new Random();
     public float Speed, DommageParCoup, rotationSpeed;
     private float RecuperationDommage, RecuperationVitesse, GlobalTimer;
@@ -23,8 +23,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     
     private void Start()
     {
-        HealthBar.maxValue = HP;
-        HealthBar.minValue = 0;
+        HealthBar.fillAmount = HP;
         RecuperationDommage = DommageParCoup;
         RecuperationVitesse = Speed;
         respawnPos = GetComponent<Transform>().position;
@@ -34,11 +33,11 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     {
         transform.Rotate(Vector3.up * rotationHorizontal * rotationSpeed * Time.deltaTime);
         transform.Translate(Vector3.forward * movingVertical * Speed * Time.deltaTime);
-        HealthBar.value = HP;
+        HealthBar.fillAmount = HP;
         if (HP <= 0)
         {
             transform.position = respawnPos;
-            HP = HealthBar.maxValue;
+            HP = HealthBar.fillAmount;
         }
         
         

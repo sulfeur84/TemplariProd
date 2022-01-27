@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = System.Object;
 
 [RequireComponent(typeof(Camera))]
 public class CameraMultiplePlayers : MonoBehaviour
 {
-    public List<Transform> targets;
+    public List<Transform> targets ;
     private Vector3 velocity;
     public float smoothTime = .5f;
     public Vector3 offset;
