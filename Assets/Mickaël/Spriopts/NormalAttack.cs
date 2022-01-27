@@ -13,6 +13,8 @@ public class NormalAttack : MonoBehaviour
     public Image CooldownImage;
     public bool OnCooldown;
     private float timer;
+
+    public float Delay;
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,8 +28,8 @@ public class NormalAttack : MonoBehaviour
         if (OnCooldown)
         {
             timer += Time.deltaTime;
-            CooldownImage.fillAmount = timer/2;
-            if (timer >= 2)
+            CooldownImage.fillAmount = timer/Delay;
+            if (timer >= Delay)
             {
                 OnCooldown = false;
             }
