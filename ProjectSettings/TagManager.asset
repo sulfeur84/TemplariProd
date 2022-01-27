@@ -9,6 +9,7 @@ TagManager:
   - Binouze
   - Tongue
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
