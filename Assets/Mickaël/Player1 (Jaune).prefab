@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5302267569426073617
 Transform:
   m_ObjectHideFlags: 0
@@ -171,6 +171,7 @@ MonoBehaviour:
   DomageBoost: 0
   Empoisonnee: 0
   respawnPos: {x: 0, y: 0, z: 0}
+  anim: {fileID: 0}
 --- !u!1 &5302267569824035472
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5302267570117845558
 Transform:
   m_ObjectHideFlags: 0
@@ -365,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5302267570663344753
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5302267571274846412
 Transform:
   m_ObjectHideFlags: 0
@@ -619,6 +620,7 @@ MonoBehaviour:
   AttackDuration: 0.5
   CooldownImage: {fileID: 0}
   OnCooldown: 0
+  anim: {fileID: 0}
   Delay: 0.75
 --- !u!114 &5302267571499200367
 MonoBehaviour:
@@ -638,4 +640,5 @@ MonoBehaviour:
   specialCooldown: 0
   CooldownImage: {fileID: 0}
   OnCooldown: 0
+  anim: {fileID: 0}
   Delay: 30
