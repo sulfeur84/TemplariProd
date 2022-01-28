@@ -178,6 +178,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player3"",
+            ""bindingGroup"": ""Player3"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player4"",
+            ""bindingGroup"": ""Player4"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -315,6 +337,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         {
             if (m_Player2SchemeIndex == -1) m_Player2SchemeIndex = asset.FindControlSchemeIndex("Player2");
             return asset.controlSchemes[m_Player2SchemeIndex];
+        }
+    }
+    private int m_Player3SchemeIndex = -1;
+    public InputControlScheme Player3Scheme
+    {
+        get
+        {
+            if (m_Player3SchemeIndex == -1) m_Player3SchemeIndex = asset.FindControlSchemeIndex("Player3");
+            return asset.controlSchemes[m_Player3SchemeIndex];
+        }
+    }
+    private int m_Player4SchemeIndex = -1;
+    public InputControlScheme Player4Scheme
+    {
+        get
+        {
+            if (m_Player4SchemeIndex == -1) m_Player4SchemeIndex = asset.FindControlSchemeIndex("Player4");
+            return asset.controlSchemes[m_Player4SchemeIndex];
         }
     }
     public interface IControllerInputActions
