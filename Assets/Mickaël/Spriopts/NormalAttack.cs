@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class NormalAttack : MonoBehaviour
@@ -14,7 +11,7 @@ public class NormalAttack : MonoBehaviour
     public bool OnCooldown;
     private float timer;
     public Animator anim;
-
+    
     public float Delay;
     // Start is called before the first frame update
     private void Start()
@@ -42,7 +39,6 @@ public class NormalAttack : MonoBehaviour
         if(!OnCooldown)
         {
             anim.SetTrigger("Attack");
-
             //specialAttack.InAttack = true;
             AttackBox.SetActive(true);
             timer = 0;

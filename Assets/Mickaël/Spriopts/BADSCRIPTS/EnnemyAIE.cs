@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EnnemyAIE : MonoBehaviour
@@ -10,7 +8,7 @@ public class EnnemyAIE : MonoBehaviour
 
     void Update()
     {
-        if (HP == 0)
+        if (HP <= 0)
         {
             Destroy(this.gameObject);
         }

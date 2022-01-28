@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SpecialAttack : MonoBehaviour
@@ -17,6 +14,8 @@ public class SpecialAttack : MonoBehaviour
     private float timer;
     public Animator anim;
     public float Delay;
+
+    public ParticleSystem Particule;
     // Start is called before the first frame update
     private void Start()
     {
@@ -43,6 +42,7 @@ public class SpecialAttack : MonoBehaviour
     {
         if(InAttack == false && specialCooldown == false)
         {
+            Particule.Play();
             anim.SetTrigger("Special");
             InAttack = true;
             specialCooldown = true;

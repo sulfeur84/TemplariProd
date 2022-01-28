@@ -42,7 +42,6 @@ public class Attack : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             GameObject enemy = GameObject.FindWithTag("Enemy");
-            enemy.GetComponent<EnemyMovement>().Dead();
         }
     }
 }

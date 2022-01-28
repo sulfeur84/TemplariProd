@@ -74,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dec75987ab3d644a29233f37d5791c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
   Joueur: {fileID: 0}
   DistanceToTarget: 2
   IsReturn: 0
@@ -109,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410e83d9fe9c12946b45537f827bf771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 200
 --- !u!1 &6415296645562010444
 GameObject:
   m_ObjectHideFlags: 0

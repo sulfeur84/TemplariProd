@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,7 +11,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     private float movingVertical;
     private float rotationHorizontal;
     public GameObject DetruitSah;
-    public Image HealthBar;
+    public Slider HealthBar;
     private Random random = new Random();
     public float Speed, DommageParCoup, rotationSpeed;
     private float RecuperationDommage, RecuperationVitesse, GlobalTimer;
@@ -23,7 +22,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     
     private void Start()
     {
-        HealthBar.fillAmount = HP;
+        HealthBar.value = HP;
         RecuperationDommage = DommageParCoup;
         RecuperationVitesse = Speed;
         respawnPos = GetComponent<Transform>().position;
@@ -33,7 +32,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
     {
         transform.Rotate(Vector3.up * rotationHorizontal * rotationSpeed * Time.deltaTime);
         transform.Translate(Vector3.forward * movingVertical * Speed * Time.deltaTime);
-        HealthBar.fillAmount = HP;
+        HealthBar.value = HP;
         if (HP <= 0)
         {
             Destroy(gameObject);
@@ -115,6 +114,8 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {            
             HP -= 25;
+            HealthBar.value = HP;
+
         }
 
         if (other.gameObject.CompareTag("Burger"))
@@ -131,8 +132,8 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
             Destroy(other.gameObject);
             int Binary = random.Next(0, 2);
             Debug.Log(Binary);
-            if (Binary == 1) DomageBoost = true;
-            else  HP = HP - (HP * 25 / 100);
+            if (Binary == 1) HP += HP * 35 / 100;
+            else HP = HP - (HP * 25 / 100);
         }
 
         if (other.gameObject.CompareTag("Tongue"))
@@ -150,7 +151,17 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
             respawnPos = other.transform.position;
         }
     }
-    
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Soin"))
+        {
+            HP += 25;
+            HealthBar.value = HP;
+
+        }
+    }
+
     private void OnDestroy()
     {
         Destroy(DetruitSah);

@@ -1,12 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EnnemyPeutEtre : MonoBehaviour
-{ 
-    public Transform pointA;
-    public Transform pointB;
+{
     public Transform Joueur;
     public float DistanceToTarget = 0.1f;
     public bool IsReturn;
@@ -23,7 +20,6 @@ public class EnnemyPeutEtre : MonoBehaviour
         switch(StatutActuel)
         {
             case IAstate.Patrouille:
-                Pattern();
                 break;
             case IAstate.Pourchasse:
                 Poursuite();
@@ -43,26 +39,7 @@ public class EnnemyPeutEtre : MonoBehaviour
             transform.LookAt(Joueur.position);
         }
     }
-
-    private void Pattern()
-    {
-        if (!IsReturn)
-        {
-            transform.position += (pointA.position - transform.position).normalized * Vitesse * Time.deltaTime;
-            if (Vector3.Distance(transform.position, pointA.position) < DistanceToTarget) {
-                transform.eulerAngles = new Vector3(0, 180 ,0);
-                IsReturn = true;
-            }
-        }
-        else 
-        {
-            transform.position += (pointB.position - transform.position).normalized * Vitesse * Time.deltaTime;
-            if (Vector3.Distance(transform.position, pointB.position) < DistanceToTarget) {
-                transform.eulerAngles = new Vector3(0, 0 ,0);
-                IsReturn = false;
-            }
-        }
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player1"))
