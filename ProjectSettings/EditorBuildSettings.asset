@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Valentin/Scenes/MainMenu.unity
+    path: Assets/PROJET/Scenes/MainMenu.unity
     guid: 77d687e8d0a0f3e4ebaf5f29755bc57e
   - enabled: 1
     path: Assets/PROJET/Scenes/Game.unity

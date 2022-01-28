@@ -24,7 +24,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Yohann/scripts/specialAttack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AttackCollision.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="248kc2meCOXznLxnDcvtPWidafK" />
   <component name="ProjectViewState">
@@ -76,6 +75,7 @@
       <workItem from="1643097867229" duration="21061000" />
       <workItem from="1643271704648" duration="13322000" />
       <workItem from="1643305114424" duration="2503000" />
+      <workItem from="1643358471985" duration="1083000" />
     </task>
     <servers />
   </component>
