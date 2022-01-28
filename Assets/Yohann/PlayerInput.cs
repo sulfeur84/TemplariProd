@@ -62,6 +62,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""55e2eeec-151f-49cd-9092-cb2a364fa5d4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""SpecialAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""697a9974-f142-4adb-9e5c-5f3d04eebeca"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -209,6 +229,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_ControllerInput_Vertical = m_ControllerInput.FindAction("Vertical", throwIfNotFound: true);
         m_ControllerInput_SimpleAttack = m_ControllerInput.FindAction("SimpleAttack", throwIfNotFound: true);
         m_ControllerInput_SpecialAttack = m_ControllerInput.FindAction("SpecialAttack", throwIfNotFound: true);
+        m_ControllerInput_Start = m_ControllerInput.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -272,6 +293,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_ControllerInput_Vertical;
     private readonly InputAction m_ControllerInput_SimpleAttack;
     private readonly InputAction m_ControllerInput_SpecialAttack;
+    private readonly InputAction m_ControllerInput_Start;
     public struct ControllerInputActions
     {
         private @PlayerInput m_Wrapper;
@@ -280,6 +302,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Vertical => m_Wrapper.m_ControllerInput_Vertical;
         public InputAction @SimpleAttack => m_Wrapper.m_ControllerInput_SimpleAttack;
         public InputAction @SpecialAttack => m_Wrapper.m_ControllerInput_SpecialAttack;
+        public InputAction @Start => m_Wrapper.m_ControllerInput_Start;
         public InputActionMap Get() { return m_Wrapper.m_ControllerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -301,6 +324,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SpecialAttack.started -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
                 @SpecialAttack.performed -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
                 @SpecialAttack.canceled -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnSpecialAttack;
+                @Start.started -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_ControllerInputActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_ControllerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -317,6 +343,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SpecialAttack.started += instance.OnSpecialAttack;
                 @SpecialAttack.performed += instance.OnSpecialAttack;
                 @SpecialAttack.canceled += instance.OnSpecialAttack;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -363,5 +392,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnVertical(InputAction.CallbackContext context);
         void OnSimpleAttack(InputAction.CallbackContext context);
         void OnSpecialAttack(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }

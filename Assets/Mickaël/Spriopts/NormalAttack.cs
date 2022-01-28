@@ -39,11 +39,11 @@ public class NormalAttack : MonoBehaviour
 
     void OnSimpleAttack()
     {
-        if(specialAttack.InAttack == false && !OnCooldown)
+        if(!OnCooldown)
         {
             anim.SetTrigger("Attack");
 
-            specialAttack.InAttack = true;
+            //specialAttack.InAttack = true;
             AttackBox.SetActive(true);
             timer = 0;
             OnCooldown = true;

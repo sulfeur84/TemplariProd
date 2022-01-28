@@ -10,7 +10,7 @@ public class SpecialAttack : MonoBehaviour
     public GameObject specialAttackBox;
     public GameObject Player;
     public float AttackDuration;
-    public static bool InAttack;
+    public  bool InAttack;
     public bool specialCooldown;
     public Image CooldownImage;
     public bool OnCooldown;
