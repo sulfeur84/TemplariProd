@@ -17,6 +17,10 @@ public class Random_choosing_player : MonoBehaviour
     private void Start()
     {
         One = true;
+        int firstPlayer = Random.Range(0, Player.Count);
+        manager = GetComponent<PlayerInputManager>();
+        manager.playerPrefab = Player[firstPlayer];
+        Player.Remove(Player[firstPlayer]);
     }
 
     private void OnPlayerJoined()
@@ -28,6 +32,12 @@ public class Random_choosing_player : MonoBehaviour
             manager.playerPrefab = Player[nextPlayer];
             Player.Remove(Player[nextPlayer]);
             One = false;
+            Invoke("OneReset",0.1f);
         }
+    }
+
+    void OneReset()
+    {
+        One = true;
     }
 }
