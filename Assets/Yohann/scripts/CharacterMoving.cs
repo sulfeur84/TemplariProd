@@ -33,4 +33,12 @@ public class CharacterMoving : MonoBehaviour
     {
         movingVertical = PlayerInput.Get<float>();
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("OUCHHHH");
+        }
+    }
 }
