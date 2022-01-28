@@ -36,8 +36,7 @@ public class ULTIMATEPLAYERSCRIPT : MonoBehaviour
         HealthBar.fillAmount = HP;
         if (HP <= 0)
         {
-            transform.position = respawnPos;
-            HP = HealthBar.fillAmount;
+            Destroy(gameObject);
         }
         
         

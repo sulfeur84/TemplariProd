@@ -16,6 +16,8 @@ public class CameraMultiplePlayers : MonoBehaviour
     public float zoomLimiter = 50f;
     private Camera cam;
 
+    private bool A, B, C, D;
+
     private void Start()
     {
         cam = GetComponent<Camera>();
@@ -38,6 +40,31 @@ public class CameraMultiplePlayers : MonoBehaviour
         Checker();
         Move();
         Zoom();
+    }
+
+    public void Update()
+    {
+        if (!A && GameObject.FindWithTag("Player1"))
+        {
+            targets.Add(GameObject.FindWithTag("Player1").transform);
+            A = true;
+        }
+        if (!B && GameObject.FindWithTag("Player2"))
+        {
+            B = true;
+            targets.Add(GameObject.FindWithTag("Player2").transform);
+        }
+        if (!C&& GameObject.FindWithTag("Player3"))
+        {
+            C = true;
+            targets.Add(GameObject.FindWithTag("Player3").transform);
+        }
+        if (!D&& GameObject.FindWithTag("Player4"))
+        {
+            D = true;
+            targets.Add(GameObject.FindWithTag("Player4").transform);
+        }
+
     }
 
     void Checker()

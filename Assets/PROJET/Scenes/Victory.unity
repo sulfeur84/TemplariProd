@@ -1348,7 +1348,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -8871,7 +8871,7 @@ GameObject:
   - component: {fileID: 806286651}
   - component: {fileID: 806286650}
   m_Layer: 0
-  m_Name: vert
+  m_Name: vert dance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8887,7 +8887,7 @@ Animator:
   m_GameObject: {fileID: 806286649}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3d0e81c490f4da4ebca4842b6a5affb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83d367532e0eae84d9514ad0071e94b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8910,7 +8910,7 @@ Transform:
   - {fileID: 824697174}
   - {fileID: 1588685099}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819144623
 GameObject:
@@ -10696,7 +10696,7 @@ GameObject:
   - component: {fileID: 1167766553}
   - component: {fileID: 1167766552}
   m_Layer: 0
-  m_Name: bleu
+  m_Name: bleu dance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10712,7 +10712,7 @@ Animator:
   m_GameObject: {fileID: 1167766551}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f19d814473f08447a85c90c34f8ad06, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6afad8e96ea83d440852a64901e8332f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14276,7 +14276,7 @@ GameObject:
   - component: {fileID: 2027651800}
   - component: {fileID: 2027651799}
   m_Layer: 0
-  m_Name: jaune
+  m_Name: jaune dance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14292,7 +14292,7 @@ Animator:
   m_GameObject: {fileID: 2027651798}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0075987449ecdde4ab91fae403a0fd1e, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66c0c0d91ff63b46a4e4e0e3fed7611, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14359,7 +14359,7 @@ GameObject:
   - component: {fileID: 2057057606}
   - component: {fileID: 2057057605}
   m_Layer: 0
-  m_Name: rouge
+  m_Name: rouge dance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14375,7 +14375,7 @@ Animator:
   m_GameObject: {fileID: 2057057604}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b7e0315ce0e86b48a671fe3232cf9fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83ccf5be22287ad4e9b476950e92e52e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14398,7 +14398,7 @@ Transform:
   - {fileID: 1453496177}
   - {fileID: 1623068113}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074549989
 GameObject:
